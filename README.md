@@ -4,4 +4,4 @@
 ## 第一部分
 
 ### 第一章
-* [运行时间比较](/tree/master/part_1/chapter_1)
+* [运行时间比较](https://github.com/o0starshine0o/LearnAlgorithms/tree/master/part_1/chapter_1)
