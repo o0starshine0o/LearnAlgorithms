@@ -32,11 +32,31 @@ def add_binary(a, b):
     return result
 
 
+def recursion_insert_sort(a, n):
+    """ using recursion to apply insert sort
+
+    :param a: a sorted array from min to max
+    :param n: index of a, a[0, n-1] is sorted
+    """
+    if n > 0:
+        # step 1 : get the sorted array
+        a = recursion_insert_sort(a, n - 1)
+        # step 2 : insert a[n] into a[0, n-1]
+        an = a[n]
+        i = n - 1
+        while i >= 0 and a[i] > an:
+            a[i + 1] = a[i]
+            i -= 1
+        a[i + 1] = an
+    return a
+
+
 if __name__ == '__main__':
     array = [5, 2, 4, 6, 1, 3]
     print('origin array : ', array)
     print('sorted array : ', insert_sort(array))
     print('sorted array desc: ', insert_sort_desc(array))
+    print('recursion_insert_sort: ', recursion_insert_sort(array, len(array) - 1))
 
     one = [1, 1, 1]
     two = [1, 0, 1]
